@@ -1,7 +1,7 @@
 FROM maven:alpine
 ENV ZK_HOSTS=localhost:2181 \
     LISTEN=9000
-RUN curl -sL https://github.com/HomeAdvisor/Kafdrop/archive/master.zip > /tmp/master.zip \
+RUN curl -sL https://github.com/yanlinw/Kafdrop/archive/master.zip > /tmp/master.zip \
     && unzip /tmp/master.zip -d /tmp \
     && cd /tmp/Kafdrop-master \
     && mvn package \
