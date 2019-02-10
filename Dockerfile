@@ -10,4 +10,4 @@ RUN curl -sL https://github.com/yanlinw/Kafdrop/archive/master.zip > /tmp/master
     && rm -fr /tmp/Kafdrop-master /tmp/master.zip \
     && echo ""
 RUN apk update && apk add --no-cache libc6-compat
-CMD java -jar /usr/local/bin/kafdrop.jar --zookeeper.connect=${ZK_HOSTS} --server.port=${LISTEN}    --message.format=AVRO
+CMD java -Dorg.xerial.snappy.use.systemlib=true -jar /usr/local/bin/kafdrop.jar --zookeeper.connect=${ZK_HOSTS} --server.port=${LISTEN}    --message.format=AVRO
